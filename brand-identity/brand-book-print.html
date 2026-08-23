@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>S.Marcato 42 Racing — Brand Identity (Print)</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 14mm 12mm 16mm 12mm;
+  }
+
+  :root {
+    --carbon: #08080A;
+    --carbon-mid: #121216;
+    --ice: #F8F8FA;
+    --ice-dim: #C8C8D0;
+    --silver: #A8A8B0;
+    --line: #2a2a32;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #111;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 11pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cover {
+    page-break-after: always;
+    min-height: 250mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--carbon);
+    color: var(--ice);
+    padding: 24mm 16mm;
+    margin: -14mm -12mm 0;
+    width: calc(100% + 24mm);
+  }
+  .cover img { width: 70%; max-width: 140mm; height: auto; margin: 18mm 0; }
+  .cover h1 {
+    font-family: Audiowide, "Segoe UI", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28pt;
+    margin: 0 0 8pt;
+  }
+  .cover p { color: var(--ice-dim); margin: 0; max-width: 120mm; }
+
+  h2 {
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 6pt;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4pt;
+  }
+  h3 {
+    font-size: 12pt;
+    margin: 14pt 0 6pt;
+    color: #111;
+  }
+  p.lead { color: #555; margin: 0 0 10pt; }
+
+  section {
+    page-break-inside: avoid;
+    margin: 0 0 16pt;
+  }
+  section.break {
+    page-break-before: always;
+  }
+
+  .panel {
+    background: var(--carbon);
+    color: var(--ice);
+    border-radius: 6pt;
+    padding: 14pt;
+    text-align: center;
+    margin: 0 0 8pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .panel.light {
+    background: #F4F4F6;
+    color: #111;
+    border: 1px solid #ddd;
+  }
+  .panel img {
+    width: auto;
+    max-width: 100%;
+    max-height: 95mm;
+    height: auto;
+    display: inline-block;
+  }
+  .panel.wide img { max-height: 55mm; }
+  .panel.hero img { max-height: 120mm; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8pt;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 7pt;
+  }
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 5pt;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+  .card .frame {
+    background: var(--carbon);
+    padding: 10pt;
+    text-align: center;
+    min-height: 42mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .card .frame.light { background: #F4F4F6; }
+  .card .frame img {
+    max-width: 100%;
+    max-height: 38mm;
+    width: auto;
+    height: auto;
+  }
+  .card .meta {
+    padding: 6pt 8pt;
+    background: #fff;
+    border-top: 1px solid #eee;
+  }
+  .card .meta strong { display: block; font-size: 9pt; }
+  .card .meta span { font-size: 8pt; color: #666; }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6pt;
+    margin-top: 8pt;
+  }
+  .swatch .chip {
+    height: 22mm;
+    border-radius: 4pt;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: flex-end;
+    padding: 5pt;
+    font-size: 8pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .swatch p { margin: 4pt 0 0; font-size: 9pt; font-weight: 600; }
+  .swatch small { color: #666; font-size: 8pt; }
+
+  .sheet {
+    border: 1px solid #ddd;
+    border-radius: 5pt;
+    overflow: hidden;
+    margin-bottom: 8pt;
+  }
+  .sheet img { width: 100%; height: auto; display: block; }
+
+  ul.rules { margin: 0; padding-left: 16pt; color: #333; }
+  ul.rules li { margin-bottom: 4pt; font-size: 10pt; }
+
+  .footer-note {
+    margin-top: 18pt;
+    font-size: 8pt;
+    color: #888;
+    border-top: 1px solid #ddd;
+    padding-top: 6pt;
+  }
+
+  .color-label { font-weight: 700; margin: 10pt 0 4pt; font-size: 11pt; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div style="letter-spacing:0.25em;text-transform:uppercase;font-size:9pt;color:#A8A8B0">Brand Identity</div>
+  <h1>S.Marcato 42</h1>
+  <img src="01-primary-stacked/primary_stacked_master_2048_carbon.png" alt="Primary logo" />
+  <p>Racing GT personal brand — logo, colorways, social, icons, abstract motors/carbon system.</p>
+</div>
+
+<!-- PRIMARY -->
+<section>
+  <h2>01 · Primary stacked</h2>
+  <p class="lead">Lockup verticale preferito.</p>
+  <div class="panel hero">
+    <img src="01-primary-stacked/primary_stacked_on_carbon.png" alt="Primary on carbon" />
+  </div>
+  <div class="grid-3">
+    <div class="card"><div class="frame"><img src="01-primary-stacked/primary_stacked_on_carbon.png" alt="" /></div><div class="meta"><strong>On Carbon</strong><span>Primary dark</span></div></div>
+    <div class="card"><div class="frame light"><img src="01-primary-stacked/primary_stacked_on_white.png" alt="" /></div><div class="meta"><strong>On White</strong><span>Print / docs</span></div></div>
+    <div class="card"><div class="frame light"><img src="01-primary-stacked/primary_stacked_on_ice.png" alt="" /></div><div class="meta"><strong>On Ice</strong><span>Light grounds</span></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <h2>01 · Primary mono</h2>
+  <div class="grid">
+    <div class="card"><div class="frame"><img src="01-primary-stacked/primary_stacked_mono_white.png" alt="" /></div><div class="meta"><strong>Mono White</strong><span>Transparent master</span></div></div>
+    <div class="card"><div class="frame light"><img src="01-primary-stacked/primary_stacked_mono_black.png" alt="" /></div><div class="meta"><strong>Mono Black</strong><span>Transparent master</span></div></div>
+  </div>
+</section>
+
+<!-- HORIZONTAL -->
+<section class="break">
+  <h2>02 · Horizontal lockup</h2>
+  <p class="lead">Header, navbar, cover.</p>
+  <div class="panel wide">
+    <img src="02-horizontal/horizontal_banner_carbon.png" alt="Horizontal banner" />
+  </div>
+  <div class="grid">
+    <div class="card"><div class="frame"><img src="02-horizontal/horizontal_on_carbon.png" alt="" /></div><div class="meta"><strong>On Carbon</strong><span>UI scura</span></div></div>
+    <div class="card"><div class="frame light"><img src="02-horizontal/horizontal_on_white.png" alt="" /></div><div class="meta"><strong>On White</strong><span>Documenti</span></div></div>
+    <div class="card"><div class="frame"><img src="02-horizontal/horizontal_mono_white.png" alt="" /></div><div class="meta"><strong>Mono White</strong><span>Overlay</span></div></div>
+    <div class="card"><div class="frame light"><img src="02-horizontal/horizontal_banner_white.png" alt="" /></div><div class="meta"><strong>Banner White</strong><span>Cover / email</span></div></div>
+  </div>
+</section>
+
+<!-- WORDMARK / MARK / RACING -->
+<section class="break">
+  <h2>03 · Wordmark — S.Marcato</h2>
+  <div class="panel wide">
+    <img src="04-wordmark/wordmark_smarcato_on_carbon.png" alt="Wordmark" />
+  </div>
+  <div class="grid-3">
+    <div class="card"><div class="frame light"><img src="04-wordmark/wordmark_smarcato_on_white.png" alt="" /></div><div class="meta"><strong>On White</strong></div></div>
+    <div class="card"><div class="frame light"><img src="04-wordmark/wordmark_smarcato_on_ice.png" alt="" /></div><div class="meta"><strong>On Ice</strong></div></div>
+    <div class="card"><div class="frame"><img src="04-wordmark/wordmark_smarcato_mono_white.png" alt="" /></div><div class="meta"><strong>Mono White</strong></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <h2>04 · Number mark — 42</h2>
+  <div class="panel hero">
+    <img src="03-mark-42/mark_42_on_carbon.png" alt="42" />
+  </div>
+  <div class="grid-3">
+    <div class="card"><div class="frame light"><img src="03-mark-42/mark_42_on_white.png" alt="" /></div><div class="meta"><strong>On White</strong></div></div>
+    <div class="card"><div class="frame"><img src="03-mark-42/mark_42_mono_white.png" alt="" /></div><div class="meta"><strong>Mono White</strong></div></div>
+    <div class="card"><div class="frame light"><img src="03-mark-42/mark_42_mono_black.png" alt="" /></div><div class="meta"><strong>Mono Black</strong></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <h2>05 · Tag Racing · 06 · Monogram</h2>
+  <div class="grid">
+    <div class="card"><div class="frame"><img src="05-tag-racing/tag_racing_on_carbon.png" alt="" /></div><div class="meta"><strong>Racing tag</strong></div></div>
+    <div class="card"><div class="frame"><img src="06-monogram-sm/monogram_sm42_on_carbon.png" alt="" /></div><div class="meta"><strong>Monogram SM42</strong></div></div>
+    <div class="card"><div class="frame light"><img src="06-monogram-sm/monogram_sm42_on_white.png" alt="" /></div><div class="meta"><strong>Monogram on white</strong></div></div>
+    <div class="card"><div class="frame light"><img src="05-tag-racing/tag_racing_on_white.png" alt="" /></div><div class="meta"><strong>Racing on white</strong></div></div>
+  </div>
+</section>
+
+<!-- SOCIAL / ICONS -->
+<section class="break">
+  <h2>07 · Social crops</h2>
+  <div class="grid-3">
+    <div class="card"><div class="frame"><img src="07-social/avatar_1024_carbon.png" alt="" /></div><div class="meta"><strong>Avatar carbon</strong></div></div>
+    <div class="card"><div class="frame light"><img src="07-social/avatar_1024_ice.png" alt="" /></div><div class="meta"><strong>Avatar ice</strong></div></div>
+    <div class="card"><div class="frame"><img src="07-social/avatar_circle_1024.png" alt="" /></div><div class="meta"><strong>Avatar circle</strong></div></div>
+  </div>
+  <div class="grid" style="margin-top:8pt">
+    <div class="card"><div class="frame"><img src="07-social/cover_1500x500.png" alt="" /></div><div class="meta"><strong>Cover 1500×500</strong></div></div>
+    <div class="card"><div class="frame"><img src="07-social/og_1200x630.png" alt="" /></div><div class="meta"><strong>OG 1200×630</strong></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <h2>08 · Favicon & app icons</h2>
+  <div class="grid-3">
+    <div class="card"><div class="frame"><img src="08-favicon/favicon_512.png" alt="" /></div><div class="meta"><strong>Favicon 512</strong></div></div>
+    <div class="card"><div class="frame"><img src="09-app-icons/app_icon_1024.png" alt="" /></div><div class="meta"><strong>App 1024</strong></div></div>
+    <div class="card"><div class="frame"><img src="09-app-icons/app_icon_rounded_1024.png" alt="" /></div><div class="meta"><strong>Rounded 1024</strong></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <h2>09 · Clear space</h2>
+  <div class="grid">
+    <div class="sheet"><img src="10-clearspace/clearspace_primary.png" alt="Clearspace primary" /></div>
+    <div class="sheet"><img src="10-clearspace/clearspace_monogram.png" alt="Clearspace monogram" /></div>
+  </div>
+</section>
+
+<!-- NEUTRAL COLORS -->
+<section class="break">
+  <h2>10 · Neutral color system</h2>
+  <div class="sheet"><img src="11-palette/color_system.png" alt="Palette" /></div>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#08080A;color:#F8F8FA">#08080A</div><p>Carbon</p><small>Primary bg</small></div>
+    <div class="swatch"><div class="chip" style="background:#121216;color:#F8F8FA">#121216</div><p>Carbon Mid</p><small>Surfaces</small></div>
+    <div class="swatch"><div class="chip" style="background:#F8F8FA;color:#08080A">#F8F8FA</div><p>Ice White</p><small>Logo</small></div>
+    <div class="swatch"><div class="chip" style="background:#C8C8D0;color:#08080A">#C8C8D0</div><p>Ice Dim</p><small>Secondary</small></div>
+    <div class="swatch"><div class="chip" style="background:#A8A8B0;color:#08080A">#A8A8B0</div><p>Silver</p><small>Meta</small></div>
+  </div>
+</section>
+
+<!-- RACING COLORS - one page per key colorway for clarity -->
+<section class="break">
+  <h2>11 · Racing colorways</h2>
+  <div class="sheet"><img src="13-racing-colors/racing_color_system.png" alt="Racing colors" /></div>
+  <p class="lead">Preferred accent: ice wordmark + colored 42.</p>
+</section>
+
+<section class="break">
+  <div class="color-label" style="color:#E10600">Rosso Corsa · #E10600</div>
+  <div class="panel hero"><img src="13-racing-colors/rosso_corsa/primary_ice_plus_rosso_corsa_on_carbon.png" alt="Rosso combo" /></div>
+  <div class="grid-3">
+    <div class="card"><div class="frame"><img src="13-racing-colors/rosso_corsa/primary_rosso_corsa_on_carbon.png" alt="" /></div><div class="meta"><strong>Primary full</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/rosso_corsa/mark42_rosso_corsa_on_carbon.png" alt="" /></div><div class="meta"><strong>Mark 42</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/rosso_corsa/banner_rosso_corsa_carbon.png" alt="" /></div><div class="meta"><strong>Banner</strong></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <div class="color-label" style="color:#FF8700">Papaya · #FF8700</div>
+  <div class="panel hero"><img src="13-racing-colors/papaya/primary_ice_plus_papaya_on_carbon.png" alt="Papaya combo" /></div>
+  <div class="grid-3">
+    <div class="card"><div class="frame"><img src="13-racing-colors/papaya/primary_papaya_on_carbon.png" alt="" /></div><div class="meta"><strong>Primary full</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/papaya/mark42_papaya_on_carbon.png" alt="" /></div><div class="meta"><strong>Mark 42</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/papaya/banner_papaya_carbon.png" alt="" /></div><div class="meta"><strong>Banner</strong></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <div class="color-label" style="color:#C9A000">Signal Yellow · #F5C400</div>
+  <div class="panel hero"><img src="13-racing-colors/signal_yellow/primary_ice_plus_signal_yellow_on_carbon.png" alt="Yellow combo" /></div>
+  <div class="grid-3">
+    <div class="card"><div class="frame"><img src="13-racing-colors/signal_yellow/primary_signal_yellow_on_carbon.png" alt="" /></div><div class="meta"><strong>Primary full</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/signal_yellow/mark42_signal_yellow_on_carbon.png" alt="" /></div><div class="meta"><strong>Mark 42</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/signal_yellow/banner_signal_yellow_carbon.png" alt="" /></div><div class="meta"><strong>Banner</strong></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <div class="color-label" style="color:#00A3E0">Electric Blue · #00A3E0</div>
+  <div class="panel hero"><img src="13-racing-colors/electric_blue/primary_ice_plus_electric_blue_on_carbon.png" alt="Blue combo" /></div>
+  <div class="grid-3">
+    <div class="card"><div class="frame"><img src="13-racing-colors/electric_blue/primary_electric_blue_on_carbon.png" alt="" /></div><div class="meta"><strong>Primary full</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/electric_blue/mark42_electric_blue_on_carbon.png" alt="" /></div><div class="meta"><strong>Mark 42</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/electric_blue/banner_electric_blue_carbon.png" alt="" /></div><div class="meta"><strong>Banner</strong></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <div class="color-label" style="color:#004225">Racing Green · #004225</div>
+  <div class="panel hero"><img src="13-racing-colors/racing_green/primary_ice_plus_racing_green_on_carbon.png" alt="Green combo" /></div>
+  <div class="grid-3">
+    <div class="card"><div class="frame"><img src="13-racing-colors/racing_green/primary_racing_green_on_carbon.png" alt="" /></div><div class="meta"><strong>Primary full</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/racing_green/mark42_racing_green_on_carbon.png" alt="" /></div><div class="meta"><strong>Mark 42</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/racing_green/banner_racing_green_carbon.png" alt="" /></div><div class="meta"><strong>Banner</strong></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <div class="color-label" style="color:#8A8F98">Titanium · #8A8F98</div>
+  <div class="panel hero"><img src="13-racing-colors/titanium/primary_ice_plus_titanium_on_carbon.png" alt="Titanium combo" /></div>
+  <div class="grid-3">
+    <div class="card"><div class="frame"><img src="13-racing-colors/titanium/primary_titanium_on_carbon.png" alt="" /></div><div class="meta"><strong>Primary full</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/titanium/mark42_titanium_on_carbon.png" alt="" /></div><div class="meta"><strong>Mark 42</strong></div></div>
+    <div class="card"><div class="frame"><img src="13-racing-colors/titanium/banner_titanium_carbon.png" alt="" /></div><div class="meta"><strong>Banner</strong></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <h2>12 · Typography</h2>
+  <div class="sheet"><img src="12-typography/type_system.png" alt="Typography" /></div>
+</section>
+
+<section class="break">
+  <h2>15 · Abstract system · motors / carbon</h2>
+  <p class="lead">Weave, stripe −18°, chevron, hairlines, accent bar. Layer: base → weave → stripes → hairlines → accent → logo.</p>
+  <div class="sheet"><img src="15-abstract-system/00-sheets/abstract_system_overview.png" alt="Abstract overview" /></div>
+</section>
+
+<section class="break">
+  <h2>15 · Abstract families</h2>
+  <div class="grid-3">
+    <div class="card"><div class="frame"><img src="15-abstract-system/01-carbon-weave/weave_fine_1024_on_carbon.png" alt="" /></div><div class="meta"><strong>Weave fine</strong><span>8–18% opacity</span></div></div>
+    <div class="card"><div class="frame"><img src="15-abstract-system/01-carbon-weave/weave_bold_1024_on_carbon.png" alt="" /></div><div class="meta"><strong>Weave bold</strong><span>12–22% opacity</span></div></div>
+    <div class="card"><div class="frame"><img src="15-abstract-system/02-racing-stripes/stripe_double_ice_on_carbon.png" alt="" /></div><div class="meta"><strong>Racing stripes</strong><span>−18° locked</span></div></div>
+    <div class="card"><div class="frame"><img src="15-abstract-system/03-speed-chevron/chevron_md_on_carbon.png" alt="" /></div><div class="meta"><strong>Speed chevron</strong><span>Keep clear of logo</span></div></div>
+    <div class="card"><div class="frame"><img src="15-abstract-system/04-technical-hairlines/hairlines_on_carbon.png" alt="" /></div><div class="meta"><strong>Hairlines</strong><span>Structure only</span></div></div>
+    <div class="card"><div class="frame"><img src="15-abstract-system/05-accent-bars/accent_stripe_rosso_oblique_1920x1080.png" alt="" /></div><div class="meta"><strong>Accent rosso</strong><span>Max 1 / layout</span></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <h2>15 · Usage examples</h2>
+  <p class="lead">Composizioni di riferimento per grafiche e sfondi.</p>
+  <div class="panel wide"><img src="15-abstract-system/06-usage-examples/example_wallpaper_1920x1080.png" alt="Wallpaper usage" /></div>
+  <div class="grid" style="margin-top:8pt">
+    <div class="card"><div class="frame"><img src="15-abstract-system/06-usage-examples/example_lower_third_1920x1080.png" alt="" /></div><div class="meta"><strong>Lower-third / stream</strong><span>1920×1080</span></div></div>
+    <div class="card"><div class="frame"><img src="15-abstract-system/06-usage-examples/example_poster_1080x1350.png" alt="" /></div><div class="meta"><strong>Poster</strong><span>1080×1350</span></div></div>
+  </div>
+</section>
+
+<section class="break">
+  <h2>15 · Usage examples · vertical</h2>
+  <div class="panel hero"><img src="15-abstract-system/06-usage-examples/example_story_1080x1920.png" alt="Story usage" /></div>
+</section>
+
+<section class="break">
+  <h2>15 · Do / Don’t</h2>
+  <div class="sheet"><img src="15-abstract-system/00-sheets/abstract_do_dont.png" alt="Do and don't" /></div>
+</section>
+
+<section class="break">
+  <h2>13 · Usage rules</h2>
+  <ul class="rules">
+    <li>Preferisci stacked ice su carbon / foto scure</li>
+    <li>Su fondi chiari: mono black / on white</li>
+    <li>Accent racing preferred: ice wordmark + colore sul 42</li>
+    <li>Full-color solo per livree, merch e night UI</li>
+    <li>Clear space = 1/8 dell’altezza logo</li>
+    <li>Non deformare, non outlineare, non usare colori fuori palette</li>
+    <li>Minimi: stacked 120px · mark 42 = 32px · favicon = monogramma</li>
+    <li>Abstract: stripe −18° · weave dietro il logo · max 1 accent racing</li>
+    <li>Token: brand-tokens.json → abstract_system</li>
+  </ul>
+  <div class="footer-note">S.Marcato 42 Racing — Brand Identity PDF · generato da brand-book-print.html</div>
+</section>
+
+</body>
+</html>

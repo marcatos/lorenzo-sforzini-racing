@@ -1,0 +1,11 @@
+---
+description: Plane is the canonical tracker for lorenzo-sforzini-racing
+alwaysApply: true
+---
+
+# Plane tracker — Lorenzo Sforzini Racing
+
+Workspace `personal`. This folder is Plane project **LS44** (`lorenzo-sforzini-racing`).
+LAN `http://10.100.30.87`. UI `https://plane.marcatos.ddns.net`.
+
+List open work items for `LS44` at session start. Create a work item before coding.

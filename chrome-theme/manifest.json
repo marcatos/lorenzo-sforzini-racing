@@ -1,0 +1,103 @@
+{
+  "manifest_version": 2,
+  "name": "S.Marcato 42 Racing",
+  "version": "1.0.0",
+  "description": "Carbon / ice / rosso corsa theme for S.Marcato 42 Racing",
+  "theme": {
+    "images": {
+      "theme_frame": "images/frame.png",
+      "theme_toolbar": "images/toolbar.png",
+      "theme_ntp_background": "images/ntp.png",
+      "theme_tab_background": "images/tab.png"
+    },
+    "colors": {
+      "frame": [
+        8,
+        8,
+        10
+      ],
+      "frame_inactive": [
+        18,
+        18,
+        22
+      ],
+      "toolbar": [
+        18,
+        18,
+        22
+      ],
+      "tab_text": [
+        248,
+        248,
+        250
+      ],
+      "tab_background_text": [
+        200,
+        200,
+        208
+      ],
+      "bookmark_text": [
+        248,
+        248,
+        250
+      ],
+      "ntp_background": [
+        8,
+        8,
+        10
+      ],
+      "ntp_text": [
+        248,
+        248,
+        250
+      ],
+      "ntp_link": [
+        225,
+        6,
+        0
+      ],
+      "ntp_section": [
+        18,
+        18,
+        22
+      ],
+      "button_background": [
+        18,
+        18,
+        22
+      ],
+      "omnibox_background": [
+        8,
+        8,
+        10
+      ],
+      "omnibox_text": [
+        248,
+        248,
+        250
+      ]
+    },
+    "tints": {
+      "buttons": [
+        0.0,
+        0.6,
+        0.55
+      ],
+      "frame": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "background_tab": [
+        -1.0,
+        0.3,
+        0.35
+      ]
+    },
+    "properties": {
+      "ntp_background_alignment": "bottom",
+      "ntp_background_repeat": "no-repeat",
+      "ntp_logo_alternate": 1
+    }
+  }
+}

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# .NET screensaver build
+screensaver/bin/
+screensaver/obj/
+screensaver/**/bin/
+screensaver/**/obj/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Local Chrome prefs backups if any
+**/Preferences.bak*
+
+# Debug probes
+_probe_*.py
+**/_debug_*.png
+
+# Extracted Trading Paints templates (local only — large PSD)
+liveries/_tmp*/

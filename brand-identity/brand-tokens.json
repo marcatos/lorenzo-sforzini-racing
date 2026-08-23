@@ -1,0 +1,133 @@
+{
+  "brand": "L.Sforzini 44 Racing",
+  "driver": "Lorenzo Sforzini",
+  "wordmark": "L.Sforzini",
+  "race_number": "44",
+  "hero_accent": {
+    "key": "electric_blue",
+    "hex": "#00A3E0",
+    "name": "Electric Blue"
+  },
+  "colors": {
+    "carbon": "#08080A",
+    "carbon_mid": "#121216",
+    "ice": "#F8F8FA",
+    "ice_dim": "#C8C8D0",
+    "silver": "#A8A8B0",
+    "black": "#000000",
+    "white": "#FFFFFF",
+    "electric_blue": "#00A3E0"
+  },
+  "typography": {
+    "display_name": "Audiowide + italic shear 0.36",
+    "hero_number": "Audiowide italic 44",
+    "tagline": "Candara Light tracked \u2014 Racing",
+    "ui": "Segoe UI / system sans"
+  },
+  "clearspace": "1/8 of logo height",
+  "minimum_sizes_px": {
+    "stacked_height": 120,
+    "mark_44": 32,
+    "favicon": 16
+  },
+  "racing_colors": {
+    "electric_blue": {
+      "hex": "#00A3E0",
+      "name": "Electric Blue",
+      "use": "Hero accent / number / CTA"
+    },
+    "rosso_corsa": {
+      "hex": "#E10600",
+      "name": "Rosso Corsa",
+      "use": "Alternate motorsport accent"
+    },
+    "papaya": {
+      "hex": "#FF8700",
+      "name": "Papaya",
+      "use": "Energy / endurance night"
+    },
+    "signal_yellow": {
+      "hex": "#F5C400",
+      "name": "Signal Yellow",
+      "use": "High-vis / safety stripe"
+    },
+    "racing_green": {
+      "hex": "#004225",
+      "name": "Racing Green",
+      "use": "Heritage / classic GT"
+    },
+    "titanium": {
+      "hex": "#8A8F98",
+      "name": "Titanium",
+      "use": "Secondary metal / carbon trim"
+    }
+  },
+  "abstract_system": {
+    "language": "motors / carbon",
+    "stripe_angle_deg": -18.0,
+    "weave": {
+      "tile_px": 1024,
+      "fine_period_px": 28,
+      "bold_period_px": 18,
+      "opacity_fine_pct": [
+        8,
+        18
+      ],
+      "opacity_bold_pct": [
+        12,
+        22
+      ]
+    },
+    "stripes": {
+      "counts": [
+        1,
+        2,
+        3
+      ],
+      "shape": "sheared_parallelogram",
+      "long_edge_angle_deg": -18.0,
+      "end_shear": 0.0,
+      "end_edges": "vertical_canvas_aligned",
+      "type_shear_ref": 0.36,
+      "inset_ratio_default": 0.08,
+      "soft_ends": false,
+      "colors": [
+        "ice",
+        "silver",
+        "electric_blue"
+      ],
+      "max_racing_accent_per_layout": 1,
+      "note": "Parallelogram with vertical ends \u2014 never rotated rectangles"
+    },
+    "chevron": {
+      "scales": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "keep_out_of_logo_clearspace": true
+    },
+    "hairlines": {
+      "use": "structure / framing",
+      "opacity_pct": [
+        15,
+        35
+      ]
+    },
+    "layer_order": [
+      "carbon_base",
+      "carbon_weave",
+      "racing_stripes",
+      "technical_hairlines",
+      "accent_bar",
+      "logo_lockup"
+    ],
+    "dont": [
+      "stretch weave non-uniformly",
+      "place dense pattern inside logo clearspace",
+      "mix multiple racing accent colors in one abstract stack",
+      "use stripe angles other than -18\u00b0",
+      "place chevrons over wordmark or 44 mark"
+    ]
+  }
+}

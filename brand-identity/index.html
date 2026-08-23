@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>L.Sforzini 44 Racing — Brand Identity</title>
+<style>
+  :root {
+    --carbon: #08080A;
+    --carbon-mid: #121216;
+    --ice: #F8F8FA;
+    --ice-dim: #C8C8D0;
+    --silver: #A8A8B0;
+    --line: #26262e;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--carbon);
+    color: var(--ice);
+    line-height: 1.5;
+  }
+
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    padding: 0 28px; height: 60px;
+    background: rgba(8, 8, 10, 0.94);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+  }
+  .nav-brand {
+    font-family: Audiowide, "Segoe UI", sans-serif;
+    font-style: italic; letter-spacing: 0.04em;
+    color: var(--ice); text-decoration: none; white-space: nowrap; font-size: 1rem;
+  }
+  .nav-brand span {
+    color: var(--silver); font-style: normal; font-family: "Segoe UI", sans-serif;
+    font-size: 0.72rem; margin-left: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a {
+    color: var(--ice-dim); text-decoration: none; font-size: 0.72rem;
+    letter-spacing: 0.11em; text-transform: uppercase; padding: 8px 10px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--ice); background: #1a1a20; outline: none; }
+  .nav-toggle {
+    display: none; background: transparent; border: 1px solid #333; color: var(--ice);
+    padding: 8px 12px; border-radius: 4px; letter-spacing: 0.12em; text-transform: uppercase;
+    font-size: 0.72rem; cursor: pointer;
+  }
+
+  header {
+    padding: 80px 48px 56px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #141418 0%, var(--carbon) 100%);
+  }
+  header h1 {
+    font-family: Audiowide, "Segoe UI", sans-serif;
+    font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 400;
+    letter-spacing: 0.02em; margin: 0 0 14px; font-style: italic;
+  }
+  header p { color: var(--ice-dim); max-width: 720px; margin: 0; font-size: 1.05rem; }
+
+  main { padding: 56px 48px 80px; max-width: 1400px; margin: 0 auto; }
+  section { margin-bottom: 96px; scroll-margin-top: 80px; }
+  .section-head { margin-bottom: 28px; }
+  .section-head h2 {
+    font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--silver); margin: 0 0 8px; font-weight: 600;
+  }
+  .section-head p { margin: 0; color: var(--ice-dim); max-width: 640px; }
+
+  .hero-logo {
+    background: var(--carbon-mid);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 64px 40px;
+    display: grid;
+    place-items: center;
+    min-height: 520px;
+    margin-bottom: 24px;
+  }
+  .hero-logo img { width: min(100%, 720px); height: auto; display: block; }
+  .hero-logo.light { background: #F4F4F6; }
+  .hero-logo.wide img { width: min(100%, 1100px); }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  .card {
+    background: var(--carbon-mid);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card .frame {
+    display: grid;
+    place-items: center;
+    padding: 48px 32px;
+    min-height: 320px;
+    background: #0c0c10;
+  }
+  .card .frame.tall { min-height: 420px; }
+  .card .frame.light { background: #F4F4F6; }
+  .card .frame.ice { background: #F8F8FA; }
+  .card .frame.checker {
+    background:
+      linear-gradient(45deg, #101014 25%, transparent 25%),
+      linear-gradient(-45deg, #101014 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #101014 75%),
+      linear-gradient(-45deg, transparent 75%, #101014 75%);
+    background-size: 24px 24px;
+    background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+    background-color: #18181e;
+  }
+  .card img {
+    width: min(100%, 480px);
+    max-height: 340px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .card.compact .frame { min-height: 220px; padding: 28px; }
+  .card.compact img { max-height: 160px; width: min(100%, 280px); }
+  .card .meta {
+    padding: 16px 18px 18px;
+    border-top: 1px solid var(--line);
+  }
+  .card .meta strong {
+    display: block; font-size: 0.95rem; margin-bottom: 4px; font-weight: 600;
+  }
+  .card .meta span { color: var(--ice-dim); font-size: 0.85rem; }
+
+  .swatches { display: flex; flex-wrap: wrap; gap: 16px; }
+  .swatch { width: 150px; }
+  .swatch .chip {
+    height: 110px; border-radius: 10px; border: 1px solid #333;
+    display: flex; align-items: flex-end; padding: 12px; font-size: 0.85rem;
+  }
+  .swatch p { margin: 10px 0 0; font-size: 0.9rem; }
+  .swatch small { color: var(--ice-dim); }
+
+  .sheet {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--carbon-mid);
+  }
+  .sheet img { width: 100%; height: auto; display: block; }
+
+  ul.rules { color: var(--ice-dim); padding-left: 1.2rem; font-size: 1.02rem; }
+  ul.rules li { margin-bottom: 10px; }
+
+  footer {
+    padding: 32px 48px 64px; color: var(--silver); font-size: 0.85rem;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 1100px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 860px) {
+    .nav { flex-wrap: wrap; height: auto; padding: 12px 16px; gap: 12px; }
+    .nav-toggle { display: inline-flex; margin-left: auto; }
+    .nav-links { display: none; width: 100%; flex-direction: column; }
+    .nav.is-open .nav-links { display: flex; }
+    .nav-links a { padding: 12px 10px; border-bottom: 1px solid #1c1c22; border-radius: 0; }
+    header, main, footer { padding-left: 20px; padding-right: 20px; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .hero-logo { min-height: 360px; padding: 40px 20px; }
+    .card .frame { min-height: 260px; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav" id="top-nav" aria-label="Brand identity">
+  <a class="nav-brand" href="#top">L.Sforzini 44 <span>Brand</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <div class="nav-links" id="nav-links">
+    <a href="#primary">Primary</a>
+    <a href="#horizontal">Horizontal</a>
+    <a href="#wordmark">Wordmark</a>
+    <a href="#mark">Mark 44</a>
+    <a href="#racing">Racing</a>
+    <a href="#monogram">Monogram</a>
+    <a href="#social">Social</a>
+    <a href="#icons">Icons</a>
+    <a href="#clearspace">Clearspace</a>
+    <a href="#color">Color</a>
+    <a href="#racing-colors">Racing colors</a>
+    <a href="#typography">Type</a>
+    <a href="#abstract">Abstract</a>
+    <a href="#usage">Usage</a>
+  </div>
+</nav>
+
+<header id="top">
+  <h1>L.Sforzini 44</h1>
+  <p>Brand identity completa — logo, colorways, social, icon set e sistema astratto motors/carbon per grafiche e sfondi.</p>
+</header>
+
+<main>
+
+  <!-- PRIMARY -->
+  <section id="primary">
+    <div class="section-head">
+      <h2>01 · Primary stacked</h2>
+      <p>Lockup verticale preferito. Usalo come firma principale su wallpaper, poster e pit wall.</p>
+    </div>
+    <div class="hero-logo">
+      <img src="01-primary-stacked/primary_stacked_on_carbon.png" alt="Primary stacked master" />
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall"><img src="01-primary-stacked/primary_stacked_on_carbon.png" alt="Primary on carbon" /></div>
+        <div class="meta"><strong>On Carbon</strong><span>Versione primaria — dark grounds</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall light"><img src="01-primary-stacked/primary_stacked_on_white.png" alt="Primary on white" /></div>
+        <div class="meta"><strong>On White</strong><span>Print / documenti chiari</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall ice"><img src="01-primary-stacked/primary_stacked_on_ice.png" alt="Primary on ice" /></div>
+        <div class="meta"><strong>On Ice</strong><span>Fondi ghiaccio chiari</span></div>
+      </article>
+    </div>
+    <div class="grid-2" style="margin-top:20px">
+      <article class="card">
+        <div class="frame checker tall"><img src="01-primary-stacked/primary_stacked_mono_white.png" alt="Primary mono white" /></div>
+        <div class="meta"><strong>Mono White</strong><span>Trasparente — overlay su foto scure</span></div>
+      </article>
+      <article class="card">
+        <div class="frame checker tall"><img src="01-primary-stacked/primary_stacked_mono_black.png" alt="Primary mono black" /></div>
+        <div class="meta"><strong>Mono Black</strong><span>Trasparente — overlay su fondi chiari</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL -->
+  <section id="horizontal">
+    <div class="section-head">
+      <h2>02 · Horizontal lockup</h2>
+      <p>Per header, navbar, cover e formati larghi.</p>
+    </div>
+    <div class="hero-logo wide">
+      <img src="02-horizontal/horizontal_on_carbon.png" alt="Horizontal banner carbon" />
+    </div>
+    <div class="grid-2">
+      <article class="card">
+        <div class="frame"><img src="02-horizontal/horizontal_on_carbon.png" alt="Horizontal on carbon" /></div>
+        <div class="meta"><strong>On Carbon</strong><span>UI scura / web</span></div>
+      </article>
+      <article class="card">
+        <div class="frame light"><img src="02-horizontal/horizontal_on_white.png" alt="Horizontal on white" /></div>
+        <div class="meta"><strong>On White</strong><span>Documenti e slide</span></div>
+      </article>
+      <article class="card">
+        <div class="frame ice"><img src="02-horizontal/horizontal_on_ice.png" alt="Horizontal on ice" /></div>
+        <div class="meta"><strong>On Ice</strong><span>Fondi ghiaccio</span></div>
+      </article>
+      <article class="card">
+        <div class="frame light"><img src="02-horizontal/horizontal_banner_white.png" alt="Horizontal banner white" /></div>
+        <div class="meta"><strong>Banner White</strong><span>Cover / email header</span></div>
+      </article>
+      <article class="card">
+        <div class="frame checker"><img src="02-horizontal/horizontal_mono_white.png" alt="Horizontal mono white" /></div>
+        <div class="meta"><strong>Mono White</strong><span>Trasparente</span></div>
+      </article>
+      <article class="card">
+        <div class="frame checker"><img src="02-horizontal/horizontal_mono_black.png" alt="Horizontal mono black" /></div>
+        <div class="meta"><strong>Mono Black</strong><span>Trasparente</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- WORDMARK -->
+  <section id="wordmark">
+    <div class="section-head">
+      <h2>03 · Wordmark — L.Sforzini</h2>
+      <p>Solo il nome. Bold, squadrato, angoli arrotondati, italic velocità.</p>
+    </div>
+    <div class="hero-logo wide">
+      <img src="04-wordmark/wordmark_lsforzini_on_carbon.png" alt="Wordmark large" />
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame light"><img src="04-wordmark/wordmark_lsforzini_on_white.png" alt="Wordmark white" /></div>
+        <div class="meta"><strong>On White</strong><span>Documenti</span></div>
+      </article>
+      <article class="card">
+        <div class="frame ice"><img src="04-wordmark/wordmark_lsforzini_on_ice.png" alt="Wordmark ice" /></div>
+        <div class="meta"><strong>On Ice</strong><span>Fondi chiari</span></div>
+      </article>
+      <article class="card">
+        <div class="frame checker"><img src="04-wordmark/wordmark_lsforzini_mono_white.png" alt="Wordmark mono" /></div>
+        <div class="meta"><strong>Mono White</strong><span>Trasparente</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- MARK 44 -->
+  <section id="mark">
+    <div class="section-head">
+      <h2>04 · Number mark — 44</h2>
+      <p>Il segno più iconico. Per badge, sticker, watermark e social crop.</p>
+    </div>
+    <div class="hero-logo">
+      <img src="03-mark-44/mark_44_on_carbon.png" alt="Mark 44 large" />
+    </div>
+    <div class="grid-4">
+      <article class="card compact">
+        <div class="frame"><img src="03-mark-44/mark_44_on_carbon.png" alt="42 carbon" /></div>
+        <div class="meta"><strong>On Carbon</strong><span>Primary</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame light"><img src="03-mark-44/mark_44_on_white.png" alt="42 white" /></div>
+        <div class="meta"><strong>On White</strong><span>Print</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame ice"><img src="03-mark-44/mark_44_on_ice.png" alt="42 ice" /></div>
+        <div class="meta"><strong>On Ice</strong><span>Light</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame checker"><img src="03-mark-44/mark_44_mono_white.png" alt="42 mono" /></div>
+        <div class="meta"><strong>Mono White</strong><span>Overlay</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame checker"><img src="03-mark-44/mark_44_mono_black.png" alt="42 mono black" /></div>
+        <div class="meta"><strong>Mono Black</strong><span>Overlay</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame"><img src="03-mark-44/mark_44_512.png" alt="42 512" /></div>
+        <div class="meta"><strong>512 px</strong><span>Transparent square</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame"><img src="03-mark-44/mark_44_256.png" alt="42 256" /></div>
+        <div class="meta"><strong>256 px</strong><span>Transparent square</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame"><img src="03-mark-44/mark_44_128.png" alt="42 128" /></div>
+        <div class="meta"><strong>128 px</strong><span>Transparent square</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- RACING TAG -->
+  <section id="racing">
+    <div class="section-head">
+      <h2>05 · Tag — Racing</h2>
+      <p>Sotto-firma leggera a tracking largo.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame"><img src="05-tag-racing/tag_racing_on_carbon.png" alt="Racing carbon" /></div>
+        <div class="meta"><strong>On Carbon</strong><span>Primary</span></div>
+      </article>
+      <article class="card">
+        <div class="frame light"><img src="05-tag-racing/tag_racing_on_white.png" alt="Racing white" /></div>
+        <div class="meta"><strong>On White</strong><span>Print</span></div>
+      </article>
+      <article class="card">
+        <div class="frame checker"><img src="05-tag-racing/tag_racing_mono_white.png" alt="Racing mono" /></div>
+        <div class="meta"><strong>Mono White</strong><span>Trasparente</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- MONOGRAM -->
+  <section id="monogram">
+    <div class="section-head">
+      <h2>06 · Monogram LS44</h2>
+      <p>Icona compatta per avatar, app e favicon.</p>
+    </div>
+    <div class="hero-logo">
+      <img src="06-monogram-ls/monogram_ls44_on_carbon.png" alt="Monogram large" />
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall light"><img src="06-monogram-ls/monogram_ls44_on_white.png" alt="Monogram white" /></div>
+        <div class="meta"><strong>On White</strong><span>Light grounds</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall ice"><img src="06-monogram-ls/monogram_ls44_on_ice.png" alt="Monogram ice" /></div>
+        <div class="meta"><strong>On Ice</strong><span>Soft light</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall checker"><img src="06-monogram-ls/monogram_ls44_mono_white.png" alt="Monogram mono" /></div>
+        <div class="meta"><strong>Mono White</strong><span>Trasparente</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section id="social">
+    <div class="section-head">
+      <h2>07 · Social & digital crops</h2>
+      <p>Formati pronti per profili, cover e share card.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall"><img src="07-social/avatar_1024_carbon.png" alt="Avatar carbon" /></div>
+        <div class="meta"><strong>Avatar 1024</strong><span>Carbon</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall ice"><img src="07-social/avatar_1024_ice.png" alt="Avatar ice" /></div>
+        <div class="meta"><strong>Avatar 1024</strong><span>Ice</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="07-social/avatar_circle_1024.png" alt="Avatar circle" /></div>
+        <div class="meta"><strong>Avatar Circle</strong><span>Crop circolare</span></div>
+      </article>
+    </div>
+    <div class="grid-2" style="margin-top:20px">
+      <article class="card">
+        <div class="frame"><img src="07-social/cover_1500x500.png" alt="Cover" /></div>
+        <div class="meta"><strong>Cover 1500×500</strong><span>LinkedIn / X header</span></div>
+      </article>
+      <article class="card">
+        <div class="frame"><img src="07-social/og_1200x630.png" alt="OG" /></div>
+        <div class="meta"><strong>OG 1200×630</strong><span>Link preview</span></div>
+      </article>
+      <article class="card">
+        <div class="frame"><img src="07-social/youtube_1920x1080.png" alt="YouTube" /></div>
+        <div class="meta"><strong>YouTube 1920×1080</strong><span>Thumb / end screen</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="07-social/story_1080x1920.png" alt="Story" style="max-height:480px" /></div>
+        <div class="meta"><strong>Story 1080×1920</strong><span>Vertical social</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ICONS -->
+  <section id="icons">
+    <div class="section-head">
+      <h2>08 · Favicon & app icons</h2>
+      <p>Scale da 16px a 1024px.</p>
+    </div>
+    <div class="grid-4">
+      <article class="card compact">
+        <div class="frame"><img src="08-favicon/favicon_512.png" alt="Favicon 512" /></div>
+        <div class="meta"><strong>Favicon 512</strong><span>PWA</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame"><img src="08-favicon/favicon_256.png" alt="Favicon 256" /></div>
+        <div class="meta"><strong>Favicon 256</strong><span></span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame"><img src="08-favicon/favicon_128.png" alt="Favicon 128" /></div>
+        <div class="meta"><strong>Favicon 128</strong><span></span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame"><img src="08-favicon/apple-touch-icon.png" alt="Apple touch" /></div>
+        <div class="meta"><strong>Apple Touch</strong><span>180×180</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame"><img src="09-app-icons/app_icon_1024.png" alt="App 1024" /></div>
+        <div class="meta"><strong>App Icon 1024</strong><span>Store master</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame"><img src="09-app-icons/app_icon_rounded_1024.png" alt="App rounded" /></div>
+        <div class="meta"><strong>Rounded 1024</strong><span>iOS preview</span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame"><img src="09-app-icons/app_icon_512.png" alt="App 512" /></div>
+        <div class="meta"><strong>App Icon 512</strong><span></span></div>
+      </article>
+      <article class="card compact">
+        <div class="frame"><img src="09-app-icons/app_icon_rounded_512.png" alt="Rounded 512" /></div>
+        <div class="meta"><strong>Rounded 512</strong><span></span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLEARSPACE -->
+  <section id="clearspace">
+    <div class="section-head">
+      <h2>09 · Clear space</h2>
+      <p>Area di rispetto = 1/8 dell’altezza logo.</p>
+    </div>
+    <div class="grid-2">
+      <div class="sheet"><img src="10-clearspace/clearspace_primary.png" alt="Clearspace primary" /></div>
+      <div class="sheet"><img src="10-clearspace/clearspace_monogram.png" alt="Clearspace monogram" /></div>
+    </div>
+  </section>
+
+  <!-- COLOR -->
+  <section id="color">
+    <div class="section-head">
+      <h2>10 · Neutral color system</h2>
+      <p>Base ice-on-carbon (identità primaria).</p>
+    </div>
+    <div class="sheet" style="margin-bottom:24px">
+      <img src="11-palette/color_system.png" alt="Color system sheet" />
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#08080A;color:#F8F8FA">#08080A</div><p>Carbon</p><small>Primary bg</small></div>
+      <div class="swatch"><div class="chip" style="background:#121216;color:#F8F8FA">#121216</div><p>Carbon Mid</p><small>Surfaces</small></div>
+      <div class="swatch"><div class="chip" style="background:#F8F8FA;color:#08080A">#F8F8FA</div><p>Ice White</p><small>Logo primary</small></div>
+      <div class="swatch"><div class="chip" style="background:#C8C8D0;color:#08080A">#C8C8D0</div><p>Ice Dim</p><small>Secondary</small></div>
+      <div class="swatch"><div class="chip" style="background:#A8A8B0;color:#08080A">#A8A8B0</div><p>Silver</p><small>Rules / meta</small></div>
+    </div>
+  </section>
+
+  <!-- RACING COLORS -->
+  <section id="racing-colors">
+    <div class="section-head">
+      <h2>11 · Racing colorways</h2>
+      <p>Accenti motorsport: usa ice + colore sul 44 come firma preferred; full-color per livree / merch / night UI.</p>
+    </div>
+    <div class="sheet" style="margin-bottom:32px">
+      <img src="13-racing-colors/racing_color_system.png" alt="Racing color system" />
+    </div>
+
+    <!-- Electric Blue -->
+    <div class="section-head" style="margin-top:40px">
+      <h2 style="color:#00A3E0">Electric Blue · #00A3E0</h2>
+      <p>Accent hero classico — CTA, numero, night race.</p>
+    </div>
+    <div class="hero-logo">
+      <img src="13-racing-colors/electric_blue/primary_ice_plus_electric_blue_on_carbon.png" alt="Ice + Electric Blue primary" />
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/electric_blue/primary_electric_blue_on_carbon.png" alt="Primary electric blue" /></div>
+        <div class="meta"><strong>Primary full</strong><span>Electric Blue on carbon</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/electric_blue/mark44_electric_blue_on_carbon.png" alt="42 electric blue" /></div>
+        <div class="meta"><strong>Mark 44</strong><span>Accent number 44</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/electric_blue/banner_electric_blue_carbon.png" alt="Banner electric blue" /></div>
+        <div class="meta"><strong>Horizontal banner</strong><span>Headers / cover</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall light"><img src="13-racing-colors/electric_blue/primary_electric_blue_on_white.png" alt="Primary electric blue white" /></div>
+        <div class="meta"><strong>On White</strong><span>Print / merch</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/electric_blue/monogram_electric_blue_on_carbon.png" alt="Monogram electric blue" /></div>
+        <div class="meta"><strong>Monogram</strong><span>Avatar / app</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/electric_blue/wordmark_electric_blue_on_carbon.png" alt="Wordmark electric blue" /></div>
+        <div class="meta"><strong>Wordmark</strong><span>L.Sforzini</span></div>
+      </article>
+    </div>
+
+    <!-- Papaya -->
+    <div class="section-head" style="margin-top:56px">
+      <h2 style="color:#FF8700">Papaya · #FF8700</h2>
+      <p>Energia endurance / night GT.</p>
+    </div>
+    <div class="hero-logo">
+      <img src="13-racing-colors/papaya/primary_ice_plus_papaya_on_carbon.png" alt="Ice + Papaya primary" />
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/papaya/primary_papaya_on_carbon.png" alt="Primary papaya" /></div>
+        <div class="meta"><strong>Primary full</strong><span>Papaya on carbon</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/papaya/mark44_papaya_on_carbon.png" alt="42 papaya" /></div>
+        <div class="meta"><strong>Mark 44</strong><span>Accent number 44</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/papaya/banner_papaya_carbon.png" alt="Banner papaya" /></div>
+        <div class="meta"><strong>Horizontal banner</strong><span>Headers / cover</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall light"><img src="13-racing-colors/papaya/primary_papaya_on_white.png" alt="Primary papaya white" /></div>
+        <div class="meta"><strong>On White</strong><span>Print / merch</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/papaya/monogram_papaya_on_carbon.png" alt="Monogram papaya" /></div>
+        <div class="meta"><strong>Monogram</strong><span>Avatar / app</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/papaya/wordmark_papaya_on_carbon.png" alt="Wordmark papaya" /></div>
+        <div class="meta"><strong>Wordmark</strong><span>L.Sforzini</span></div>
+      </article>
+    </div>
+
+    <!-- Signal Yellow -->
+    <div class="section-head" style="margin-top:56px">
+      <h2 style="color:#F5C400">Signal Yellow · #F5C400</h2>
+      <p>High-vis, safety stripe, pit lane signal.</p>
+    </div>
+    <div class="hero-logo">
+      <img src="13-racing-colors/signal_yellow/primary_ice_plus_signal_yellow_on_carbon.png" alt="Ice + Yellow primary" />
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/signal_yellow/primary_signal_yellow_on_carbon.png" alt="Primary yellow" /></div>
+        <div class="meta"><strong>Primary full</strong><span>Yellow on carbon</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/signal_yellow/mark44_signal_yellow_on_carbon.png" alt="42 yellow" /></div>
+        <div class="meta"><strong>Mark 44</strong><span>Accent number 44</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/signal_yellow/banner_signal_yellow_carbon.png" alt="Banner yellow" /></div>
+        <div class="meta"><strong>Horizontal banner</strong><span>Headers / cover</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall light"><img src="13-racing-colors/signal_yellow/primary_signal_yellow_on_white.png" alt="Primary yellow white" /></div>
+        <div class="meta"><strong>On White</strong><span>Print / merch</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/signal_yellow/monogram_signal_yellow_on_carbon.png" alt="Monogram yellow" /></div>
+        <div class="meta"><strong>Monogram</strong><span>Avatar / app</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/signal_yellow/wordmark_signal_yellow_on_carbon.png" alt="Wordmark yellow" /></div>
+        <div class="meta"><strong>Wordmark</strong><span>L.Sforzini</span></div>
+      </article>
+    </div>
+
+    <!-- Electric Blue -->
+    <div class="section-head" style="margin-top:56px">
+      <h2 style="color:#00A3E0">Electric Blue · #00A3E0</h2>
+      <p>Modern GT / tech / night telemetry vibe.</p>
+    </div>
+    <div class="hero-logo">
+      <img src="13-racing-colors/electric_blue/primary_ice_plus_electric_blue_on_carbon.png" alt="Ice + Blue primary" />
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/electric_blue/primary_electric_blue_on_carbon.png" alt="Primary blue" /></div>
+        <div class="meta"><strong>Primary full</strong><span>Blue on carbon</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/electric_blue/mark44_electric_blue_on_carbon.png" alt="42 blue" /></div>
+        <div class="meta"><strong>Mark 44</strong><span>Accent number 44</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/electric_blue/banner_electric_blue_carbon.png" alt="Banner blue" /></div>
+        <div class="meta"><strong>Horizontal banner</strong><span>Headers / cover</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall light"><img src="13-racing-colors/electric_blue/primary_electric_blue_on_white.png" alt="Primary blue white" /></div>
+        <div class="meta"><strong>On White</strong><span>Print / merch</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/electric_blue/monogram_electric_blue_on_carbon.png" alt="Monogram blue" /></div>
+        <div class="meta"><strong>Monogram</strong><span>Avatar / app</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/electric_blue/wordmark_electric_blue_on_carbon.png" alt="Wordmark blue" /></div>
+        <div class="meta"><strong>Wordmark</strong><span>L.Sforzini</span></div>
+      </article>
+    </div>
+
+    <!-- Racing Green -->
+    <div class="section-head" style="margin-top:56px">
+      <h2 style="color:#2d8a5a">Racing Green · #004225</h2>
+      <p>Heritage GT / classic endurance.</p>
+    </div>
+    <div class="hero-logo">
+      <img src="13-racing-colors/racing_green/primary_ice_plus_racing_green_on_carbon.png" alt="Ice + Green primary" />
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/racing_green/primary_racing_green_on_carbon.png" alt="Primary green" /></div>
+        <div class="meta"><strong>Primary full</strong><span>Green on carbon</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/racing_green/mark44_racing_green_on_carbon.png" alt="42 green" /></div>
+        <div class="meta"><strong>Mark 44</strong><span>Accent number 44</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/racing_green/banner_racing_green_carbon.png" alt="Banner green" /></div>
+        <div class="meta"><strong>Horizontal banner</strong><span>Headers / cover</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall light"><img src="13-racing-colors/racing_green/primary_racing_green_on_white.png" alt="Primary green white" /></div>
+        <div class="meta"><strong>On White</strong><span>Print / merch</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/racing_green/monogram_racing_green_on_carbon.png" alt="Monogram green" /></div>
+        <div class="meta"><strong>Monogram</strong><span>Avatar / app</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/racing_green/wordmark_racing_green_on_carbon.png" alt="Wordmark green" /></div>
+        <div class="meta"><strong>Wordmark</strong><span>L.Sforzini</span></div>
+      </article>
+    </div>
+
+    <!-- Titanium -->
+    <div class="section-head" style="margin-top:56px">
+      <h2 style="color:#8A8F98">Titanium · #8A8F98</h2>
+      <p>Metal / carbon trim — secondary racing chrome.</p>
+    </div>
+    <div class="hero-logo">
+      <img src="13-racing-colors/titanium/primary_ice_plus_titanium_on_carbon.png" alt="Ice + Titanium primary" />
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/titanium/primary_titanium_on_carbon.png" alt="Primary titanium" /></div>
+        <div class="meta"><strong>Primary full</strong><span>Titanium on carbon</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/titanium/mark44_titanium_on_carbon.png" alt="42 titanium" /></div>
+        <div class="meta"><strong>Mark 44</strong><span>Accent number 44</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/titanium/banner_titanium_carbon.png" alt="Banner titanium" /></div>
+        <div class="meta"><strong>Horizontal banner</strong><span>Headers / cover</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall light"><img src="13-racing-colors/titanium/primary_titanium_on_white.png" alt="Primary titanium white" /></div>
+        <div class="meta"><strong>On White</strong><span>Print / merch</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/titanium/monogram_titanium_on_carbon.png" alt="Monogram titanium" /></div>
+        <div class="meta"><strong>Monogram</strong><span>Avatar / app</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="13-racing-colors/titanium/wordmark_titanium_on_carbon.png" alt="Wordmark titanium" /></div>
+        <div class="meta"><strong>Wordmark</strong><span>L.Sforzini</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- TYPE -->
+  <section id="typography">
+    <div class="section-head">
+      <h2>12 · Typography</h2>
+      <p>Display Audiowide italic · hero 44 · tag Racing tracked.</p>
+    </div>
+    <div class="sheet">
+      <img src="12-typography/type_system.png" alt="Typography system" />
+    </div>
+  </section>
+
+  <!-- ABSTRACT SYSTEM -->
+  <section id="abstract">
+    <div class="section-head">
+      <h2>15 · Abstract system · motors / carbon</h2>
+      <p>Linguaggio grafico condiviso per sfondi e layout: weave carbonio, stripe a −18°, chevron, hairline tecniche, accent bar. Layer order: base → weave → stripes → hairlines → accent → logo.</p>
+    </div>
+    <div class="sheet" style="margin-bottom:24px">
+      <img src="15-abstract-system/00-sheets/abstract_system_overview.png" alt="Abstract system overview" />
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall"><img src="15-abstract-system/01-carbon-weave/weave_fine_1024_on_carbon.png" alt="Weave fine" /></div>
+        <div class="meta"><strong>Carbon weave fine</strong><span>Tile 1024 · opacità 8–18%</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="15-abstract-system/01-carbon-weave/weave_bold_1024_on_carbon.png" alt="Weave bold" /></div>
+        <div class="meta"><strong>Carbon weave bold</strong><span>Tile 1024 · opacità 12–22%</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="15-abstract-system/02-racing-stripes/stripe_double_ice_on_carbon.png" alt="Stripes" /></div>
+        <div class="meta"><strong>Racing stripes</strong><span>Angolo fisso −18°</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="15-abstract-system/03-speed-chevron/chevron_md_on_carbon.png" alt="Chevron" /></div>
+        <div class="meta"><strong>Speed chevron</strong><span>Fuori clearspace logo</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="15-abstract-system/04-technical-hairlines/hairlines_on_carbon.png" alt="Hairlines" /></div>
+        <div class="meta"><strong>Technical hairlines</strong><span>Struttura / framing</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="15-abstract-system/05-accent-bars/accent_stripe_electric blue_oblique_1920x1080.png" alt="Accent electric blue" /></div>
+        <div class="meta"><strong>Accent bar</strong><span>Max 1 accent racing / layout</span></div>
+      </article>
+    </div>
+
+    <div class="section-head" style="margin-top:48px">
+      <h2>Usage examples</h2>
+      <p>Composizioni di riferimento — riusa i layer, non rastremare il logo.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <div class="frame tall"><img src="15-abstract-system/06-usage-examples/example_wallpaper_1920x1080.png" alt="Wallpaper example" /></div>
+        <div class="meta"><strong>Wallpaper / desktop</strong><span>1920×1080</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="15-abstract-system/06-usage-examples/example_lower_third_1920x1080.png" alt="Lower third" /></div>
+        <div class="meta"><strong>Lower-third / stream</strong><span>1920×1080</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="15-abstract-system/06-usage-examples/example_story_1080x1920.png" alt="Story" /></div>
+        <div class="meta"><strong>Story / vertical</strong><span>1080×1920</span></div>
+      </article>
+      <article class="card">
+        <div class="frame tall"><img src="15-abstract-system/06-usage-examples/example_poster_1080x1350.png" alt="Poster" /></div>
+        <div class="meta"><strong>Poster</strong><span>1080×1350</span></div>
+      </article>
+    </div>
+
+    <div class="section-head" style="margin-top:48px">
+      <h2>Do / Don’t</h2>
+    </div>
+    <div class="sheet">
+      <img src="15-abstract-system/00-sheets/abstract_do_dont.png" alt="Abstract do and don't" />
+    </div>
+    <ul class="rules" style="margin-top:20px">
+      <li>Stripe a <strong>−18°</strong> come <strong>parallelogramma</strong> con estremità verticali (allineate al canvas) — mai rettangoli ruotati</li>
+      <li>Weave dietro il logo; clearspace libero da chevron e hash</li>
+      <li>Max <strong>un</strong> accent racing (electric blue/papaya/…) per composizione astratta</li>
+      <li>Tile il weave — non stirarlo in modo non uniforme</li>
+      <li>Token ufficiali in <code>brand-tokens.json → abstract_system</code></li>
+    </ul>
+  </section>
+
+  <!-- USAGE -->
+  <section id="usage">
+    <div class="section-head">
+      <h2>13 · Usage rules</h2>
+    </div>
+    <ul class="rules">
+      <li>Preferisci il lockup stacked ice su carbon / foto scure</li>
+      <li>Su fondi chiari usa le versioni mono black / on white</li>
+      <li>Accent racing preferred: <strong>ice wordmark + colore sul 44</strong> (cartella <code>13-racing-colors/*/primary_ice_plus_*</code>)</li>
+      <li>Full-color solo per livree, merch e night UI — non mischiare due accenti racing nello stesso lockup</li>
+      <li>Clear space = 1/8 dell’altezza del logo su tutti i lati</li>
+      <li>Non deformare, non outlineare, non aggiungere colori fuori palette</li>
+      <li>Minimi digitali: stacked 120px altezza · mark 44 = 32px · favicon = monogramma</li>
+      <li>Abstract layers: vedi sezione <a href="#abstract" style="color:var(--ice)">15 · Abstract system</a></li>
+      <li>Tutti gli asset PNG sono in <code>brand-identity/</code> con master trasparenti</li>
+    </ul>
+  </section>
+
+</main>
+<footer>L.Sforzini 44 Racing — Brand kit · PNG masters in cartelle 01–15</footer>
+<script>
+  const nav = document.getElementById("top-nav");
+  const toggle = nav.querySelector(".nav-toggle");
+  toggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  nav.querySelectorAll(".nav-links a").forEach((a) => {
+    a.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#08080A"/>
+  <!-- Sheared parallelogram: slanted run + italic end cuts (not rotated rect) -->
+  <polygon points="40,50 360,20 360,55 40,85" fill="#F8F8FA" opacity="0.55"/>
+  <polygon points="40,100 360,70 360,88 40,118" fill="#00A3E0" opacity="0.85"/>
+  <text x="200" y="175" fill="#C8C8D0" font-family="Segoe UI" font-size="12" text-anchor="middle">parallelogram · -18° · vertical ends</text>
+</svg>
